@@ -1,0 +1,11 @@
+/* login */
+.img{
+    background: url('D:/project-react/my-project/src/Componet/img/loginimg2.jpg') no-repeat 0 0;
+    background-size: cover;
+}
+
+/* register */
+.rimg{
+    background: url('D:/project-react/my-project/src/Componet/img/registerimg.jpg') no-repeat 0 0;
+    background-size: cover;
+}
