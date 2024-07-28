@@ -5,12 +5,12 @@ var db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: 'e-cart'
+    database: 'e-shop'
 });
 
 db.connect((err) => {
     if (err) {
-        console.log("Connection error")
+        console.log("Connection error");
     }
 });
 

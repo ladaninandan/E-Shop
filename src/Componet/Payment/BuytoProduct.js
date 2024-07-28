@@ -5,6 +5,7 @@ import axios from "axios";
 import { FaRupeeSign } from 'react-icons/fa';
 
 
+
 export default function BuytoProduct() {
     const navigat = useNavigate();
     const location = useLocation();
@@ -18,6 +19,8 @@ export default function BuytoProduct() {
     const [City, setCity] = useState("");
     const [State, setState] = useState("");
     const [Zip, setZip] = useState("");
+
+    // payment 
 
     const handleFirestname = (e) => {
         let name = e.target.value.trimStart();
@@ -94,7 +97,7 @@ export default function BuytoProduct() {
                 setTimeout(() => {
                     seterror(false);
                 }, 2000);
-                navigat("./Home")
+                navigat("/Payment", { state: { totalPriceToPay } });
             }
         });
 
@@ -105,10 +108,6 @@ export default function BuytoProduct() {
         // { id: 1, name: " Pradesh" },
         "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", " Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", " Tripura", " Uttar Pradesh",
     ];
-
-    const handleClick = () => {
-        navigat("/Payment")
-    }
 
 
     return (
@@ -213,10 +212,9 @@ export default function BuytoProduct() {
                                     </div>
                                 </div>
                                 <div className="col-12 text-center">
-                                    <button className="btn btn-primary" type="submit" onClick={handleClick}>Payment <FaRupeeSign />{totalPriceToPay} </button>
+                                    <button className="btn btn-primary" type="submit" >Payment <FaRupeeSign />{totalPriceToPay} </button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                     <div className="col-6  d-md-block d-none ">

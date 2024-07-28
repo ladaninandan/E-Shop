@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db');
 
 
-router.use('', async (req, res) => {
+router.use('/Userdetails', async (req, res) => {
     const { FirstName, LastName, Email, Address, Number, City, State, Zip } = req.body;
     const sql = "insert into userdetails (FirstName, LastName, Email, Address, Number, City, State, Zip) values (?,?,?,?,?,?,?,?)";
 
