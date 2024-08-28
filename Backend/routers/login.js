@@ -15,13 +15,17 @@ router.post('/login', (req, res) => {
         } else if (results.length > 0) {
             const userId = results[0].id;
             const updateLoginTimeQuery = 'UPDATE register SET last_login = NOW() WHERE id = ?';
-            db.query(updateLoginTimeQuery, [userId], (err) => {
-                if (err) {
-                    return res.json(`error ${err}`)
-                } else if (req.body.email === "admin@gmail.com" && req.body.password === "admin@1234") {
-                    return res.json("admin");
+            db.query(updateLoginTimeQuery, [userId], (err, result) => {
+                if (result) {
+                    if (req.body.email === "admin@gmail.com" && req.body.password === "admin@1234") {
+                        return res.json("admin");
+                    } else {
+                        return res.json("success");
+                    }
+                } else {
+                    return res.json("success");
                 }
-                return res.json("success");
+                return res.json(`error ${err}`)
             });
         } else {
             // res.status(400).send('Invalid email or password');

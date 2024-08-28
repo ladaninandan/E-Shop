@@ -31,6 +31,7 @@ export default function Login() {
 
 
   const [password, setpassword] = useState("");
+
   const handlepasswordChange = (event) => {
     const passwordpatten = event.target.value.replace(/\s/g, '');
     setpassword(passwordpatten);
@@ -52,7 +53,7 @@ export default function Login() {
       password,
     }).then(res => {
       if (res.data === "admin") {
-        navigate('/Admin');
+        navigate('/Admin_dashboard');
       } else if (res.data === "success") {
         localStorage.setItem("userData", JSON.stringify(res.config.data))
         navigate('/Home');
@@ -62,6 +63,8 @@ export default function Login() {
           seterror(false);
         }, 2000);
       }
+
+
     })
       .catch(err => console.log(err))
   }
@@ -94,6 +97,9 @@ export default function Login() {
                     </div>
                     <div className="">
                       <span>Don't have an account? <Link to="/Register">Register here </Link></span>
+                    </div>
+                    <div className="">
+                      <span>forgot password <Link to="/ForgotPassword">Click</Link></span>
                     </div>
                     <div className="mt-3 rounded-4">
                     </div>

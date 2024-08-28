@@ -141,8 +141,6 @@ export default function Register(props) {
 
                                         {!isValid && <p className="text-danger">Please enter a valid email
                                             <span className='text-success'>example44@gmail.com</span> </p>}
-
-
                                         {chack === 'place enter password' ? null : <p className='text-warning'>{chack}</p>}
 
                                     </div>

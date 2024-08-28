@@ -10,13 +10,13 @@ const Imageslider = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/943fc7a0812f3209.jpg?q=20" className="d-block w-100" alt="..." />
+                    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/943fc7a0812f3209.jpg?q=20" className="d-block w-100" alt="Slide 1" />
                 </div>
                 <div className="carousel-item">
-                    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/f6720ba6b92b67fb.jpg?q=20" className="d-block w-100" alt="..." />
+                    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/f6720ba6b92b67fb.jpg?q=20" className="d-block w-100" alt="Slide 2" />
                 </div>
                 <div className="carousel-item">
-                    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/b5ec95451c4f8705.jpg?q=20" className="d-block w-100" alt="..." />
+                    <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/b5ec95451c4f8705.jpg?q=20" className="d-block w-100" alt="Slide 3" />
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

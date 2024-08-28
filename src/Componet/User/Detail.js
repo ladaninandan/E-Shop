@@ -48,89 +48,68 @@ const Detail = () => {
         <div>
             <Navbar />
             <div className="container mt-4">
-                <div className="row bg-white">
-                    <div className="col-xl-4 col-lg-4 col-md-5 col-sm-5 col-xs-2" >
-                        <img src={product.image} alt={product.name} className='img-fluid text-center' />
-                        <div className="row">
-                            <div className=" align-items-start mt-1 col-6 col-xs-6  col-lg-6 col-xl-6">
-                                <button className="btn btn-primary" onClick={handleAddToCart}>
-                                    <FaShoppingCart />
-                                    Add to cart
+                <div className="row bg-white p-3 shadow-sm">
+                    {/* Product Image Section */}
+                    <div className="col-xl-4 col-lg-4 col-md-5 col-sm-12 text-center mb-4">
+                        <img src={product.image} alt={product.name} className="img-fluid mb-3" style={{ maxHeight: '400px', objectFit: 'contain' }} />
+                        <div className="row mt-3 justify-content-center">
+                            <div className="col-12 col-sm-6 mb-2">
+                                <button className="btn btn-primary w-100 " onClick={handleAddToCart}>
+                                    <FaShoppingCart className="me-2" />
+                                    Add  Cart
                                 </button>
                             </div>
-                            <div className=" align-items-start mt-1  col-6  col-xs-6 col-xl-5">
-                                <button className="btn btn-warning">
-                                    <SiPowerautomate />
-                                    Buy  Now
+                            <div className="col-12 col-sm-6 mb-2">
+                                <button className="btn btn-warning w-100 ">
+                                    <SiPowerautomate className="me-2" />
+                                    Buy Now
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className="col-xl-8 col-lg-8 col-md-7 col-sm-7 col-xs-10 mt-3">
-                        <p className='fw-bold '>{product.name}</p>
-                        <p className='fw-bold '>{product.brand}</p>
-                        <p className='h5'>{product.ProductDetails}</p>
-                        <p className='text-success'>{product.PriceTag}</p>
-                        <div className="mt-3">
-                            <div className="h3">
-                                Price: ₹{product.price}
-                                <span className="ms-5 ">Discount: {product.discount}%</span>
+
+                    {/* Product Details Section */}
+                    <div className="col-xl-8 col-lg-8 col-md-7 col-sm-12">
+                        <h2 className="fw-bold">{product.name}</h2>
+                        <h4 className="fw-bold text-muted">{product.brand}</h4>
+                        <p className="h5 mt-3">{product.ProductDetails}</p>
+                        <p className="text-success h4">{product.PriceTag}</p>
+                        <div className="mt-3 h3 d-flex align-items-center flex-wrap">
+                            <span>Price: ₹{product.price}</span>
+                            <span className="ms-md-5 ms-3 text-danger">Discount: {product.discount}%</span>
+                        </div>
+                        <p className="mt-3">About: {product.about}</p>
+                        <div className="row mt-3">
+                            <div className="col-auto fw-bold">Size:</div>
+                            <div className="col-auto mb-2">
+                                <button type="button" className="btn btn-outline-dark rounded-pill">26</button>
+                            </div>
+                            <div className="col-auto mb-2">
+                                <button type="button" className="btn btn-outline-dark rounded-pill">30</button>
+                            </div>
+                            <div className="col-auto mb-2">
+                                <button type="button" className="btn btn-outline-dark rounded-pill">32</button>
+                            </div>
+                            <div className="col-auto mb-2">
+                                <button type="button" className="btn btn-outline-dark rounded-pill">36</button>
                             </div>
                         </div>
-                        <div>{product.ProductDetails}</div>
-                        <p className="mt-3">About: {product.about}</p>
-                        <div className="row ">
-                            <div className="col-lg-1 ">Size:</div>
-                            <div className="col-lg-1">
-                                <button type="button" className="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on bottom">
-                                    26
-                                </button>
-                            </div>
-                            <div className="col-lg-1 ">
-                                <button type="button" className="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
-                                    30
-                                </button>
-                            </div>
-                            <div className="col-lg-1 ">
-                                <button className='btn btn-dark'>32</button>
-                            </div>
-                            <div className="col-lg-1 ">
-                                <button className='btn btn-dark'>36</button>
-                            </div>
-                            <div className="row mt-3">
-
-                                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li className="nav-item mt-2">
-                                        <FaTag /> Bank OfferGet ₹50 instant discount on first Flipkart UPI transaction on order of ₹200 and above
-                                    </li>
-                                    <li className="nav-item mt-2">
-                                        <FaTag />  Bank Offer5% Cashback on Flipkart Axis Bank Card
-                                    </li>
-                                    <li className="nav-item mt-2">
-                                        <FaTag />  Combo OfferBuy 3 items save 3%; Buy 4 or more save 5%
-                                    </li>
-                                    <li className="nav-item mt-2">
-                                        <FaTag />  Special PriceGet extra 9% off (price inclusive of cashback/coupon)
-                                    </li>
-                                    <li className="nav-item mt-2">
-                                        <FaTag /> No Cost EMI on Bajaj Finserv EMI Card on cart value above ₹2999
-                                    </li>
-                                    <li className="nav-item mt-2">
-                                        <FaTag /> Buy for 2000 get ₹500 off your Next Buy
-                                    </li>
-                                    <li className="nav-item mt-2">
-                                        <FaTag /> Partner OfferSign-up for Flipkart Pay Later & get free Times Prime Benefits worth ₹20,000*
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="row mt-4">
-                                <div className='text-danger'><span className='text-black'>seller :-</span>This product 10 Days Return Policy </div>
-
-                            </div>
+                        <ul className="list-unstyled mt-3">
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> Bank Offer: Get ₹50 instant discount on first Flipkart UPI transaction on order of ₹200 and above</li>
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> Bank Offer: 5% Cashback on Flipkart Axis Bank Card</li>
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> Combo Offer: Buy 3 items save 3%; Buy 4 or more save 5%</li>
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> Special Price: Get extra 9% off (price inclusive of cashback/coupon)</li>
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> No Cost EMI on Bajaj Finserv EMI Card on cart value above ₹2999</li>
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> Buy for ₹2000 get ₹500 off your Next Buy</li>
+                            <li className="mb-2"><FaTag className="me-2 text-primary" /> Partner Offer: Sign-up for Flipkart Pay Later & get free Times Prime Benefits worth ₹20,000*</li>
+                        </ul>
+                        <div className="text-danger mt-4">
+                            <span className="text-black">Seller: </span>This product has a 10 Days Return Policy
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }

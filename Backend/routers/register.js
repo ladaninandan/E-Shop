@@ -25,7 +25,6 @@ router.post('/register', (req, res) => {
         db.query(insertUserQuery, [name, email, number, password, conformPassword], (err, results) => {
             if (err) throw err;
             res.send('User registered successfully');
-
         });
     });
 });

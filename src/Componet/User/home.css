@@ -138,3 +138,11 @@ body {
 .search-input {
   padding-left: 35px; /* Adjust this value to make space for the icon */
 }
+
+/* admin */
+.glass-bg {
+  background: rgba(51, 51, 57, 0.7); /* #171821 with transparency */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(144, 143, 143, 0.1);
+}

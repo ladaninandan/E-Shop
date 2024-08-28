@@ -5,7 +5,7 @@ const Razorpay = require("razorpay");
 
 
 route.use("/orders", async (req, res) => {
-   // console.log("Received request body:", req.body);
+
 
    const razorpay = new Razorpay({
       key_id: "rzp_test_U30XP8raz2jBPn",
@@ -13,7 +13,6 @@ route.use("/orders", async (req, res) => {
    });
 
    const options = {
-
       amount: req.body.amount,
       currency: req.body.currency,
       receipt: "receipt#1",
@@ -24,10 +23,11 @@ route.use("/orders", async (req, res) => {
       const response = await razorpay.orders.create(options);
       const orderData = ({
          order_id: response.id,
-         amount: response.amount,
          currency: response.currency,
+         amount: response.amount,
          receipt: options.receipt,
-         status: 'created'
+         status: 'created',
+
       });
 
       // data bases store

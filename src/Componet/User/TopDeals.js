@@ -23,7 +23,7 @@ export default function TopDeals() {
                     </div>
                     <div className="container-fluid">
                         <div className="row py-4">
-                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 ">
+                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 mb-3 ">
                                 <NavLink to="/motorola-mobiles" style={{ textDecoration: "none", color: "black" }}  >
                                     <div className="card  ">
                                         <img style={mystyle} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/5/c/r/-original-imagx24ftn9fyuam.jpeg?q=70" alt="" className="img-fluid" />
@@ -35,7 +35,7 @@ export default function TopDeals() {
                                 </NavLink>
                             </div>
 
-                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 ">
+                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 mb-3 ">
                                 <NavLink to="" style={{ textDecoration: "none", color: "black" }}  >
                                     <div className="card  ">
                                         <img style={mystyle} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/5/y/8/-original-imagtt4mhqrzjs9r.jpeg?q=70" alt="" className="img-fluid" />
@@ -46,7 +46,7 @@ export default function TopDeals() {
                                     </div>
                                 </NavLink>
                             </div>
-                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 ">
+                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 mb-3">
                                 <NavLink to="" style={{ textDecoration: "none", color: "black" }}  >
                                     <div className="card  ">
                                         <img style={mystyle} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/s/9/i/m6-pro-5g-mzb0eqjin-poco-original-imags3e7dazavyje.jpeg?q=70" alt="" className="img-fluid" />
@@ -57,7 +57,7 @@ export default function TopDeals() {
                                     </div>
                                 </NavLink>
                             </div>
-                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 ">
+                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 mb-3">
                                 <NavLink to="" style={{ textDecoration: "none", color: "black" }}  >
                                     <div className="card  ">
                                         <img style={mystyle} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/u/v/h/-original-imagxaqtzmqgtfen.jpeg?q=70" alt="" className="img-fluid" />
@@ -68,7 +68,7 @@ export default function TopDeals() {
                                     </div>
                                 </NavLink>
                             </div>
-                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 ">
+                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 mb-3">
                                 <NavLink to="" style={{ textDecoration: "none", color: "black" }}  >
                                     <div className="card  ">
                                         <img style={mystyle} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/4/8/i/-original-imahy99nvkpewtzy.jpeg?q=70" alt="" className="img-fluid" />
@@ -79,7 +79,7 @@ export default function TopDeals() {
                                     </div>
                                 </NavLink>
                             </div>
-                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 ">
+                            <div className=" col-xl-2 col-lg-3 col-md-2 col-sm-3 mb-3">
                                 <NavLink to="" style={{ textDecoration: "none", color: "black" }}  >
                                     <div className="card  ">
                                         <img style={mystyle} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/h/h/d/-original-imags487gaqqhcea.jpeg?q=70" alt="" className="img-fluid" />

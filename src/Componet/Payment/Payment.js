@@ -10,6 +10,9 @@ export default function Pay() {
     const [responseId, setResponseId] = useState("");
     const [responseState, setResponseState] = useState([]);
 
+
+
+
     const loadScript = (src) => {
         return new Promise((resolve) => {
             const script = document.createElement("script");
@@ -102,6 +105,32 @@ export default function Pay() {
         await axios.post("http://localhost:5000/payment")
     }
 
+    const [orderId, setOrderId] = useState('');
+    const [showOrderId, setShowOrderId] = useState('');
+
+    const handleDownload = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/download-receipt?order_id=${orderId.trim()}`);
+
+            if (!response.ok) {
+                throw new Error('Failed to download the PDF');
+            }
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `order-receipt-${orderId.trim()}.pdf`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+
+            // Set the order ID to be displayed
+            setShowOrderId(orderId.trim());
+        } catch (error) {
+            console.error('Error downloading PDF:', error);
+        }
+    };
+
 
     return (
         <div>
@@ -135,7 +164,22 @@ export default function Pay() {
                             )}
                         </div>
                         <div className="col-lg-6">
+                            <h1>Download Order Receipt</h1>
+                            <input
+                                type="text"
+                                placeholder="Enter Order ID"
+                                value={orderId}
+                                onChange={(e) => setOrderId(e.target.value)}
+                            />
+                            <button onClick={handleDownload}>Download PDF</button>
 
+                            {/* Display the Order ID after the user downloads the PDF */}
+                            {showOrderId && (
+                                <div>
+                                    <h2>Order ID:</h2>
+                                    <p>{showOrderId}</p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </form>

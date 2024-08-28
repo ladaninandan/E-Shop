@@ -15,6 +15,14 @@ const mobiles = require("./routers/mobiles")
 const Order = require("./routers/Orders")
 const Payments = require("./routers/Payment")
 const userOrderDeatailes = require("./routers/userOrderDetails");
+const adminuserdatashow = require("./routers/AdminBackend/Adminuser_registerdata");
+const showOrder = require("./routers/AdminBackend/OrderShow");
+const payments = require("./routers/AdminBackend/CustomersShow");
+const downloadReceipt = require("./routers/recepit");
+const forgetPassword = require("./routers/Forgotpassword");
+const ResetPassword = require("./routers/ResetPassword")
+
+
 app.use(cors())
 // this code is post man body send data used
 app.use(bodyParser.json());
@@ -50,6 +58,24 @@ app.get("/payment/:paymentId", Payments)
 
 // userOrderDetailes 
 app.get("/userOrderDetails/:id", userOrderDeatailes)
+
+// forget-password
+app.post("/forgot-password", forgetPassword);
+
+// reset-password
+app.post("/reset-password", ResetPassword)
+
+
+
+// admin
+app.get("/adminuserdatashow", adminuserdatashow);
+app.get("/showOrder", showOrder);
+app.get("/payments", payments);
+app.get("/download-receipt", downloadReceipt)
+
+
+
+
 
 
 app.listen(port, () => {
